@@ -3,7 +3,7 @@ version: '{build}'
 # Install scripts. (runs after repo cloning)
 install:
   # Get the latest stable version of io.js
-  - ps: Install-Product node ''
+  - ps: Install-Product node '0.10'
   - npm -g install npm@latest
   - set PATH=%APPDATA%\npm;%PATH%
   - node --version
