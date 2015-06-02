@@ -1,24 +1,14 @@
 version: '{build}'
 
-# Test against this version of Node.js
-environment:
-  matrix:
-  - nodejs_version: ""
-
 # Install scripts. (runs after repo cloning)
 install:
-  # Get the latest stable version of Node.js or io.js
-  - ps: Install-Product node $env:nodejs_version
-  # install modules
+  # Get the latest stable version of io.js
+  - ps: Install-Product node ''
   - npm -g install npm@latest
   - set PATH=%APPDATA%\npm;%PATH%
+  - node --version
   - npm --version
   - npm install
 
-# Post-install test scripts.
 test_script:
-  # Output useful info for debugging.
-  - node --version
-  - npm --version
-  # run tests
   - npm test
