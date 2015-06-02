@@ -14,8 +14,7 @@ install:
   - set PATH=%APPDATA%\npm;%PATH%
   - node --version
   - npm --version
-  - npm install socket.io@0.9.16 --msvs_version=2012
-  - npm install
+  - npm install --msvs_version=2012
 
 test_script:
   - npm test
