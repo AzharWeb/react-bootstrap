@@ -1,13 +1,20 @@
 version: '{build}'
 
+environment:
+  nodejs_version: "2"
+
+init:
+  - git config --global core.autocrlf input
+
 # Install scripts. (runs after repo cloning)
 install:
   # Get the latest stable version of io.js
-  - ps: Install-Product node '0.10'
+  - ps: Install-Product node $env:nodejs_version
   - npm -g install npm@latest
   - set PATH=%APPDATA%\npm;%PATH%
   - node --version
   - npm --version
+  - npm install socket.io --msvs_version=2012
   - npm install
 
 test_script:
