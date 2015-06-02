@@ -3,11 +3,7 @@ version: '{build}'
 # Test against this version of Node.js
 environment:
   matrix:
-  # node.js
-  - nodejs_version: "0.10"
-  - nodejs_version: "0.12"
-  # io.js
-  - nodejs_version: "1.0"
+  - nodejs_version: ""
 
 # Install scripts. (runs after repo cloning)
 install:
